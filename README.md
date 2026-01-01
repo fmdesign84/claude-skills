@@ -15,7 +15,7 @@ cd claude-skills
 ### 🎯 메타 스킬
 | 스킬 | 명령어 | 용도 |
 |------|--------|------|
-| Plan | `/plan` | 프로젝트 분석 → 스킬 조합 제안 |
+| Kickoff | `/kickoff` | 프로젝트 분석 → 스킬 조합 제안 |
 | Strategy | `/strategy` | 스킬 활용 전략/워크플로우 |
 | Commands | `/commands` | 스킬 목록 확인 |
 
@@ -39,7 +39,7 @@ cd claude-skills
 
 ### 새 프로젝트 시작
 ```bash
-/plan "AI 이미지 생성 SaaS. 사용자 인증, 크레딧 시스템 필요"
+/kickoff "AI 이미지 생성 SaaS. 사용자 인증, 크레딧 시스템 필요"
 ```
 
 ### 개별 스킬 사용
@@ -65,7 +65,7 @@ cd claude-skills
 ## 워크플로우
 
 ```
-/plan (분석)
+/kickoff (분석)
    │
    ├─→ /api-route (API)
    │      └─→ /react-hook (데이터 훅)

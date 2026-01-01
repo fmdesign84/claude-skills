@@ -8,6 +8,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 COMMANDS_DIR="$SCRIPT_DIR/commands"
 TARGET_DIR="$HOME/.claude/commands"
+CLAUDE_DIR="$HOME/.claude"
 
 echo "🐋 Claude Code Skills Installer"
 echo "================================"
@@ -35,6 +36,11 @@ case $choice in
             ln -sf "$file" "$TARGET_DIR/$filename"
             echo "  ✓ $filename"
         done
+        # CLAUDE.md 심볼릭 링크
+        if [ -f "$SCRIPT_DIR/CLAUDE.md" ]; then
+            ln -sf "$SCRIPT_DIR/CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
+            echo "  ✓ CLAUDE.md (전역 설정)"
+        fi
         echo ""
         echo "✅ 심볼릭 링크 설치 완료!"
         echo "   업데이트: git pull (자동 반영)"
@@ -47,6 +53,11 @@ case $choice in
             cp "$file" "$TARGET_DIR/$filename"
             echo "  ✓ $filename"
         done
+        # CLAUDE.md 복사
+        if [ -f "$SCRIPT_DIR/CLAUDE.md" ]; then
+            cp "$SCRIPT_DIR/CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
+            echo "  ✓ CLAUDE.md (전역 설정)"
+        fi
         echo ""
         echo "✅ 파일 복사 완료!"
         echo "   업데이트: git pull && ./install.sh"

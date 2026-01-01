@@ -1,6 +1,11 @@
 # Claude Code Skills
 
-React, Next.js, TypeScript, Tailwind 기반 개발을 위한 Claude Code 스킬 모음입니다.
+React, Next.js, TypeScript, Tailwind 기반 개발을 위한 Claude Code 스킬 + 전역 설정 모음입니다.
+
+## 포함 내용
+
+- **CLAUDE.md** - 전역 코딩 규칙/가이드라인 (`~/.claude/CLAUDE.md`)
+- **commands/** - 11개 스킬 (`~/.claude/commands/`)
 
 ## 설치
 
@@ -84,9 +89,11 @@ install.sh 대신 직접 설치:
 ```bash
 # 심볼릭 링크 (권장 - 업데이트 쉬움)
 ln -sf $(pwd)/commands/* ~/.claude/commands/
+ln -sf $(pwd)/CLAUDE.md ~/.claude/CLAUDE.md
 
 # 또는 복사
 cp commands/* ~/.claude/commands/
+cp CLAUDE.md ~/.claude/CLAUDE.md
 ```
 
 ## 업데이트
